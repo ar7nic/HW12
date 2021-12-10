@@ -1,0 +1,21 @@
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 183px;
+  height: 47px;
+  border-radius: 23.5px;
+  padding: 19px 0 17px;
+  text-align: center;
+  background-color: $secondary-color;
+  color: $background-color;
+  cursor: pointer;
+  font-family: 'Raleway', sans-serif;
+  @include current-font(14px,700,50%);
+  letter-spacing: 0.35px;
+  text-decoration: none;
+  &:hover {
+    border: 3px solid $background-color;
+    color: $background-color;
+  }
+}

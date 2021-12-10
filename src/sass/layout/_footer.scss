@@ -1,0 +1,79 @@
+.footer {
+  &__block, .try {
+    @media (min-width:1001px) {
+      min-height: 60vh;
+    }
+    @media (max-width:1000px) {
+      min-height: 40vh;
+    }
+    @media (max-width:890px) {
+      min-height: 30vh;
+    }
+  }
+  .try {
+    background: url("../img/fedback_bg.jpg") center no-repeat;
+    background-size: cover;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px;
+    &__body {
+    }
+    &__text {
+      @include adaptiv-font(60,30);
+      font-family: $secondary-font-family;
+      font-weight: 200;
+      color: $background-color;
+      span {
+        font-weight: 700;
+      }
+      margin: 0 0 100px;
+      @media (max-width:890px) {
+        margin: 0 0 40px;
+      }
+    }
+  }
+  &__block {
+    background: url("../img/footer_logo.png") center no-repeat;
+  }
+  &__container {
+    padding-top: 78px 0 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @media (max-width:890px) {
+       flex-direction: column;
+      justify-content: center;
+      }
+  }
+  &__copy {
+    @include current-font(18px,400,100%);
+    letter-spacing: 0.45px;
+    text-align: left;
+    color: $main-color;
+    position: relative;
+    padding: 20px 0 20px 50px;
+    &:before {
+      content: url("../img/logo_template.png");
+      position: absolute;
+      left: 0;
+      top: 12px;
+    }
+  }
+  &__menu {
+    @media (max-width:520px) {
+        display: none;
+      }
+    .menu__link {
+      font-family: $main-font-family;
+      @include current-font(18px,400,100%);
+      color: rgba($main-color,0.4);
+      text-transform: none;
+      &:hover {
+        color: $main-color;
+      }
+    }
+  }
+}
