@@ -23,7 +23,10 @@ return [
             'url' => '#',
         ],
     ],
-    'siteLogo' => 'img/some.png',
+    'siteLogo' => [
+        'url' => './assets/img/alecto_logo.png',
+        'alt' => 'Alecto',
+    ],
     'mainSlider' => [
         [
             'title' => [
@@ -35,17 +38,59 @@ return [
                 'text' => 'Learn more',
                 'url' => '#',
             ],
+            'sClass' => 'active',
         ],
         [
             'title' => [
                 'main' => 'Alecto',
-                'second' => 'is simple PSD Template',
+                'second' => 'is simple PSD Template1',
             ],
             'description' => 'Nam varius accumsan elementum aliquam',
             'link' => [
                 'text' => 'Learn more',
                 'url' => '#',
             ],
+            'sClass' => 'none',
+        ],
+        [
+            'title' => [
+                'main' => 'Alecto',
+                'second' => 'is simple PSD Template2',
+            ],
+            'description' => 'Nam varius accumsan elementum aliquam',
+            'link' => [
+                'text' => 'Learn more',
+                'url' => '#',
+            ],
+            'sClass' => 'none',
+        ],
+        [
+            'title' => [
+                'main' => 'Alecto',
+                'second' => 'is simple PSD Template3',
+            ],
+            'description' => 'Nam varius accumsan elementum aliquam',
+            'link' => [
+                'text' => 'Learn more',
+                'url' => '#',
+            ],
+            'sClass' => 'none',
+        ],
+        [
+            'title' => [
+                'main' => 'Alecto',
+                'second' => 'is simple PSD Template4',
+            ],
+            'description' => 'Nam varius accumsan elementum aliquam',
+            'link' => [
+                'text' => 'Learn more',
+                'url' => '#',
+            ],
+            'sClass' => 'none',
         ],
     ],
+    'sectionAbout' => [
+        'title' => 'About Us',
+        'subTitle'
+    ]
 ];

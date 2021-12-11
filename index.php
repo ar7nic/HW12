@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+<?php
+$data = require_once('data.php');
+?>
 <head>
     <meta charset="UTF-8">
     <title>Alecto</title>
@@ -10,15 +13,17 @@
 <div class="wrapper">
     <header class="header">
         <div class="header__container container">
-            <h1><a class="header__logo"><img src="./assets/img/alecto_logo.png" alt="Alecto"></a></h1>
+            <h1><a class="header__logo"><img src="<?php echo $data['siteLogo']['url']?>" alt="<?php echo $data['siteLogo']['alt']?>"></a></h1>
             <nav class="header__menu menu ">
                 <ul class="menu__list menu__list_h">
-                    <li class="menu__item"><a href="#" class="menu__link">Home</a></li>
-                    <li class="menu__item"><a href="#" class="menu__link">About</a></li>
-                    <li class="menu__item"><a href="#" class="menu__link">Work</a></li>
-                    <li class="menu__item"><a href="#" class="menu__link">Services</a></li>
-                    <li class="menu__item"><a href="#" class="menu__link">Blog</a></li>
-                    <li class="menu__item"><a href="#" class="menu__link"><img src="./assets/img/glass.png"
+                    <?php
+                    foreach ($data['mainMenu'] as $menuItem) {
+                        ?>
+                        <li class="menu__item"><a href="<?php echo $menuItem['url']?>" class="menu__link"><?php echo $menuItem['title']?></a></li>
+                        <?php
+                    }
+                    ?>
+                    <li class="menu__item menu__search"><a href="#" class="menu__link"><img src="./assets/img/glass.png"
                                                                                alt="Search"></a></li>
                 </ul>
             </nav>
@@ -42,41 +47,17 @@
                         aria-label="Slide 5"></button>
             </div>
             <div class="carousel-inner">
-                <div class="carousel-item active">
+                <?php foreach ($data['mainSlider'] as $mainSliderItem) {
+                ?>
+                <div class="carousel-item <?php if ($mainSliderItem['sClass'] == 'active') echo $mainSliderItem['sClass']?>">
                     <div class="carousel-caption d-md-block">
-                        <h3><span>Alecto</span> is a simmle PSD template</h3>
-                        <p>Nam varius accumsan elementum aliquam.</p>
-                        <a href="#" class="main__button button">Learn more</a>
+                        <h3><span><?php echo $mainSliderItem['title']['main'] ?></span><?php echo $mainSliderItem['title']['second']?></h3>
+                        <p><?php echo $mainSliderItem['description']?></p>
+                        <a href="<?php echo $mainSliderItem['link']['url']?>" class="main__button button"><?php echo $mainSliderItem['link']['text']?></a>
                     </div>
                 </div>
-                <div class="carousel-item">
-                    <div class="carousel-caption d-md-block">
-                        <h3><span>Alecto</span> is a simmle PSD template2</h3>
-                        <p>Nam varius accumsan elementum aliquam.</p>
-                        <a href="#" class="main__button button">Learn more</a>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="carousel-caption d-md-block">
-                        <h3><span>Alecto</span> is a simmle PSD template3</h3>
-                        <p>Nam varius accumsan elementum aliquam.</p>
-                        <a href="#" class="main__button button">Learn more</a>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="carousel-caption d-md-block">
-                        <h3><span>Alecto</span> is a simmle PSD template4</h3>
-                        <p>Nam varius accumsan elementum aliquam.</p>
-                        <a href="#" class="main__button button">Learn more</a>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="carousel-caption d-md-block">
-                        <h3><span>Alecto</span> is a simmle PSD template5</h3>
-                        <p>Nam varius accumsan elementum aliquam.</p>
-                        <a href="#" class="main__button button">Learn more</a>
-                    </div>
-                </div>
+                <?php }
+                ?>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carousel-header" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
